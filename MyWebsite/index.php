@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php
-        echo "Hello World!"; 
+    echo $_GET["name"];
     ?>
 </body>
 </html>
