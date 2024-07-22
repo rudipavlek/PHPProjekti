@@ -1,7 +1,6 @@
 <?php
-session_start();
 
-$_SESSION["username"] = "ihorvat";
+require_once 'config.php';
 
 ?>
 
@@ -15,11 +14,6 @@ $_SESSION["username"] = "ihorvat";
 </head>
 <body>
 
-<?php
-
-echo $_SESSION["username"];
-
-?>
 
 </body>
 </html>
