@@ -5,17 +5,27 @@ class Signup extends Dbh{
     private $username;
     private $pwd;
     private $email;
+    private $first_name;
+    private $last_name;
+    private $address;
+    private $city;
+    private $postal_code;
+    private $country;
+    private $phone;
 
 
-    public function __constructor($username, $pwd, $email){
+    public function __construct($username, $pwd, $email, $first_name, $last_name, $address, $city, $postal_code, $country, $phone){
         $this->username = $username;
         $this->pwd = $pwd;
         $this->email = $email;
+        $this->first_name = $first_name;
+        $this->last_name = $last_name;
+        $this->address = $address;
+        $this->city = $city;
+        $this->postal_code = $postal_code;
+        $this->country = $country;
+        $this->phone = $phone;
     }
-
-    
-
-   
 
     public function signupUser(){
         try {
@@ -33,28 +43,24 @@ class Signup extends Dbh{
             if(is_email_invalid($this->email)){
                 $errors["invalid_email"] = "Invalid email used!";
             }
-            if(is_username_taken($this->pdo, $this->username)){
+            if(is_username_taken($this->connect(), $this->username)){
                 $errors["username_taken"] = "Username is already taken!";
             }
-            if(is_email_registered($this->pdo, $this->email)){
+            if(is_email_registered($this->connect(), $this->email)){
                 $errors["email_used"] = "Email is already taken!";
             }
-    
-    
     
             require_once '../includes/config_session.inc.php';
     
             if($errors){
                 $_SESSION["errors_signup"] = $errors;
-                header("Location: ../index.php");
+                header("Location: ../indexSignup.php");
                 die();
             }
     
-            create_user($this->pdo, $this->username, $this->pwd, $this->email);
+            create_user($this->connect(), $this->username, $this->pwd, $this->email, $this->first_name, $this->last_name, $this->address, $this->city, $this->postal_code, $this->country, $this->phone);
             header("Location: ../index.php?signup=success");
     
-            $pdo = null;
-            $stmt = null;
             die();
     
         } catch (PDOException $e) {

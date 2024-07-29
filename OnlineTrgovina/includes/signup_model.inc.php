@@ -12,6 +12,8 @@ function get_username(object $pdo, string $username){
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $stmt = null;
+
     return $result;
 }
 
@@ -25,12 +27,14 @@ function get_email(object $pdo, string $email){
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    $stmt = null;
+
     return $result;
 }
 
-function set_user(object $pdo, string $username, string $pwd, string $email){
+function set_user(object $pdo, string $username, string $pwd, string $email, string $first_name, string $last_name, string $address, string $city, string $postal_code, string $country, string $phone){
 
-    $query = "INSERT INTO users (username, pwd, email) VALUES (?,?,?);";
+    $query = "INSERT INTO users (username, pwd, email, first_name, last_name, address, city, postal_code, country, phone) VALUES (?,?,?,?,?,?,?,?,?,?);";
 
     $stmt = $pdo->prepare($query);
 
@@ -40,9 +44,11 @@ function set_user(object $pdo, string $username, string $pwd, string $email){
 
     $hashedPwd = password_hash($pwd, PASSWORD_BCRYPT, $options);
 
-    $stmt->execute([$username,$hashedPwd, $email]);
+    $stmt->execute([$username,$hashedPwd, $email, $first_name, $last_name, $address, $city, $postal_code, $country, $phone]);
 
     $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    $stmt = null;
 
     return $result;
 }

@@ -15,9 +15,10 @@
 </head>
 <body>
     
-    <h3>
+
+    <h3 class = "output_username">
         <?php
-        output_username();
+        echo output_username();
         ?>
     </h3>
 
@@ -40,30 +41,12 @@
     <?php
     }
     ?>
-    
 
-
-
-    <div>
-    <h3>Signup</h3>
-
-    <form action= "includes/signup.inc.php" method = "post">
-        <input type= "text" name = "username" placeholder= "Username">
-        <input type= "password" name = "pwd" placeholder= "Password">
-        <input type= "text" name = "email" placeholder= "Email">
+    <div class ="signup_button">
+    <form action= "indexSignup.php" method = "post">
         <button>Signup</button>
     </form>
     </div>
-
-    <?php
-        check_signup_errors();
-    ?>
-
-    <h3>Logout</h3>
-
-    <form action= "includes/logout.inc.php" method = "post">
-        <button>Logout</button>
-    </form>
 
 </body>
 </html>

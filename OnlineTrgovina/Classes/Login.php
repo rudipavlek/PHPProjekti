@@ -2,29 +2,30 @@
 
 class Login extends Dbh{
 
-    public $username;
+    private $username;
     private $pwd;
+    
 
     public function __construct($username, $pwd){
         $this->username = $username;
         $this->pwd = $pwd;
     }
 
-    public function getUserName(){
-        return $this->username;
-    }
-    public function getPwd(){
-        return $this->pwd;
-    }
     public function loginUser(){
-        if(0){
-            echo $this->username;
-        }else{
         try{
 
         require_once 'Dbh.php';
         require_once '../includes/login_model.inc.php';
         require_once '../includes/login_contr.inc.php';
+
+        if (file_exists('../includes/profil.inc.php')) {
+            echo "bla";
+            die();
+        } else {
+            echo "bla2";
+            die();
+        }
+
 
         $errors = [];
 
@@ -52,25 +53,22 @@ class Login extends Dbh{
         }
 
         $newSessioId = session_create_id();
-        $sessionId = $newSessioId . "_" . $result["id"];
+        $sessionId = $newSessioId . "_" . $result["user_id"];
         session_id($sessionId);
 
-        $_SESSION["user_id"] = $result["id"];
+        $_SESSION["user_id"] = $result["user_id"];
         $_SESSION["user_username"] = htmlspecialchars($result["username"]);
 
         $_SESSION['last_generation'] = time();
 
-        header("Location: ../index.php?login=success");
-
-        $pdo = null;
-        $stmt = null;
+        header("Location: ../indexLogiran.php");
 
         die();
 
         }catch (PDOException $e) {
             die("Query failed -> ". $e->getMessage());
         }
-    }
+    
     }
 }
 

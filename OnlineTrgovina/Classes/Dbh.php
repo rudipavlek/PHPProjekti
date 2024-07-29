@@ -2,7 +2,7 @@
 
 class Dbh{
     private $host = "localhost";
-    private $dbname = "prvabaza";
+    private $dbname = "OnlineTrgovina";
     private $dbusername = "root";
     private $dbpassword = "";
 
@@ -10,10 +10,10 @@ class Dbh{
         try {
             $pdo = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->dbname, $this->dbusername, $this->dbpassword);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
             return $pdo;
         } catch (PDOException $e) {
             die("Connection failed: " . $e->getMessage());
         }
+        $pdo = null;
     }
 }
