@@ -1,8 +1,11 @@
 <link rel="stylesheet" href="css/main.css">
 
+
 <?php
+
+
 require_once 'includes/config_session.inc.php';
-    require_once 'includes/signup_view.inc.php';
+require_once 'includes/signup_view.inc.php';
     if(!isset($_SESSION["user_id"])){?>
     <div>
     <h3>Signup</h3>
@@ -19,6 +22,13 @@ require_once 'includes/config_session.inc.php';
         <input type= "text" name = "country" placeholder= "Country">
         <input type= "text" name = "phone" placeholder= "Phone">
         <button>Signup</button>
+    </form>
+    </div>
+
+
+    <div class ="home_screen">
+    <form action= "indexLogin.php" method = "post">
+        <button>Back</button>
     </form>
     </div>
 

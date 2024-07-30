@@ -1,4 +1,5 @@
 
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -78,10 +79,29 @@ div {
     font-size: 18px;
     color: #333;
 }
-.signup_button {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 18px;
-    color: #333;
+
+
+#signupButtonContainer {
+    position: fixed !important;
+    top: 10px !important;
+    right: 10px !important;
+    z-index: 1000 !important;
 }
+
+
+#signupButton:hover {
+    background-color: #218838;
+}
+
+h2 {
+    position: fixed;
+    top: 10px ;
+    right: 10px ;
+}
+
+
+
+
+
+
+

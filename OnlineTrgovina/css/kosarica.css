@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
+}
+
+main {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.artikl_kosarica {
+    display: inline-block; 
+    max-width: 100%; 
+    margin: 0 auto 20px auto; 
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.stupac_artikla_kosarica {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: inline-block; 
+}
+
+.stupac_artikla_kosarica .label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+}
+
+.stupac_artikla_kosarica .value {
+    display: block;
+    color: #333;
+}
+
+
+/* Stilovi za gumb za uklanjanje artikla */
+.gumb-ukloni {
+    margin-top: 10px; /* Razmak iznad gumba */
+    text-align: center; /* Centriranje gumba */
+}
+
+.gumb-ukloni form {
+    display: inline; /* Gumb u istom redu kao i drugi sadržaj */
+}
+
+.gumb-ukloni button {
+    background-color: #e74c3c; /* Crvena boja za gumb */
+    color: #fff; /* Bijela boja teksta na gumbu */
+    border: none; /* Bez obruba */
+    border-radius: 5px; /* Zaobljeni rubovi */
+    padding: 10px 20px; /* Unutarnji razmak */
+    cursor: pointer; /* Ruka pokazivač prilikom prelaska preko gumba */
+    font-size: 16px; /* Veliki font */
+}
+
+.gumb-ukloni button:hover {
+    background-color: #c0392b; /* Tamnija crvena boja kada se pređe preko gumba */
+}

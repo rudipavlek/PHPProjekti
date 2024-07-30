@@ -1,5 +1,5 @@
 <?php
-
+require_once 'includes/config_session.inc.php';
 function get_info_user(object $pdo, string $username){
 
 $query = "SELECT * FROM users  WHERE username=?;";

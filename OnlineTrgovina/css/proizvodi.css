@@ -1,0 +1,83 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.artikl_proizvod {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stupac_artikl_proizvod {
+    margin-bottom: 15px;
+}
+
+.stupac_artikl_proizvod .label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.stupac_artikl_proizvod .value {
+    font-size: 16px;
+    color: #555;
+}
+
+@media (max-width: 600px) {
+    .stupac_artikl_proizvod {
+        margin-bottom: 10px;
+    }
+
+    .stupac_artikl_proizvod .label {
+        font-size: 14px;
+    }
+
+    .stupac_artikl_proizvod .value {
+        font-size: 14px;
+    }
+}

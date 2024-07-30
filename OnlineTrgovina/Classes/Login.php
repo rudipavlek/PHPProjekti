@@ -18,13 +18,7 @@ class Login extends Dbh{
         require_once '../includes/login_model.inc.php';
         require_once '../includes/login_contr.inc.php';
 
-        if (file_exists('../includes/profil.inc.php')) {
-            echo "bla";
-            die();
-        } else {
-            echo "bla2";
-            die();
-        }
+        
 
 
         $errors = [];

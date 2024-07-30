@@ -7,6 +7,12 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<script>
+function redirectToSignup() {
+    window.location.href = "indexSignup.php";
+}
+</script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,19 +39,17 @@
                 <button>Login</button>
             </form>
 
-    <?php
-    check_login_errors();
-    ?>
+        <?php
+        check_login_errors();
+        ?>
     
-    </div>
+        </div>
     <?php
     }
     ?>
-
-    <div class ="signup_button">
-    <form action= "indexSignup.php" method = "post">
-        <button>Signup</button>
-    </form>
+    
+    <div id="signupButtonContainer">
+        <button id="signupButton" onclick="redirectToSignup()">Signup</button>
     </div>
 
 </body>

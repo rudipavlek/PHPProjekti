@@ -14,9 +14,6 @@ class User extends Dbh{
         require_once 'Dbh.php';
         require_once __DIR__ . '/../includes/profil.inc.php';
 
-        
-        
-
         return get_info_user($this->connect(), $this->username);
 
         }catch (PDOException $e) {
