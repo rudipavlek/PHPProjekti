@@ -20,7 +20,6 @@ class Login extends Dbh{
 
         
 
-
         $errors = [];
 
         if(is_input_empty($this->username, $this->pwd)){

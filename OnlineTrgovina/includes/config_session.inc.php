@@ -5,7 +5,6 @@ ini_set('session.use_strict_mode',1);
 
 
 session_set_cookie_params([
-    'lifetime'=> 1800,
     'domain' => 'localhost',
     'path' => '/',
     'secure' => true,
@@ -15,9 +14,9 @@ session_set_cookie_params([
 
 
 session_start();
+session_regenerate_id(true);
 
-
-if(isset($_SESSION["user_id"])){
+/*if(isset($_SESSION["user_id"])){
     if(!isset($_SESSION['last_generation'])){
 
         regenerate_session_id_loggedin();
@@ -46,7 +45,6 @@ if(isset($_SESSION["user_id"])){
 }
 
 
-
 function regenerate_session_id(){
     session_regenerate_id(true);
     $_SESSION['last_generation'] = time();
@@ -61,4 +59,4 @@ function regenerate_session_id_loggedin(){
     session_id($sessionId);
 
     $_SESSION['last_generation'] = time();
-}
+}*/

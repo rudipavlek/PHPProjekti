@@ -1,7 +1,7 @@
 <?php
-    require_once 'includes/config_session.inc.php';
     require_once 'includes/signup_view.inc.php';
     require_once 'includes/login_view.inc.php';
+    require_once 'includes/config_session.inc.php';
 
 ?>
 
@@ -22,13 +22,9 @@ function redirectToSignup() {
 <body>
     
 
-    <h3 class = "output_username">
-        <?php
-        echo output_username();
-        ?>
-    </h3>
 
     <?php
+    check_login_errors();
     if(!isset($_SESSION["user_id"])){?>
         <div>
             <h3>Login</h3>
@@ -38,14 +34,12 @@ function redirectToSignup() {
                 <input type= "password" name = "pwd" placeholder= "Password">
                 <button>Login</button>
             </form>
-
-        <?php
-        check_login_errors();
-        ?>
-    
         </div>
+        
     <?php
     }
+         
+        
     ?>
     
     <div id="signupButtonContainer">

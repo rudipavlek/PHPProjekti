@@ -5,6 +5,7 @@ require_once 'includes/login_model.inc.php';
 require_once 'includes/login_view.inc.php';
 require_once 'Classes/User.php';
 
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,11 +38,10 @@ require_once 'Classes/User.php';
     <main>
         <h2>My Profile</h2>
         <?php
-        
         $korisnik = new User(output_username());
         $user = $korisnik->getInfo();
         ?>
-        <form action="indexProfil.php" method="post">
+        <form action="includes/updateProfileInformation.php" method="post">
             <fieldset>
                 <legend>Update Profile</legend>
                 <label for="first_name">First Name:</label>
@@ -80,7 +80,7 @@ require_once 'Classes/User.php';
             </fieldset>
         </form>
 
-        <form action="indexProfil.php" method="post">
+        <form action="includes/updatePassword.php" method="post">
             <fieldset>
                 <legend>Change Password</legend>
                 <label for="old_password">Old Password:</label>

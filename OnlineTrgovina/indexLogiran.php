@@ -1,5 +1,12 @@
 <?php
+
     require_once 'includes/config_session.inc.php';
+
+    if (!isset($_SESSION["user_id"])) {
+        header("Location: index.php");
+        die();
+    }
+
     require_once 'includes/login_view.inc.php';
     require_once 'includes/redirect.php';
 
@@ -36,7 +43,6 @@
     <nav>
         <ul>
             <li><a href="indexLogiran.php">Home</a></li>
-
 
             <li>
             <form action= "proizvodi.php" method = "post">

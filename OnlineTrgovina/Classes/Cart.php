@@ -42,6 +42,13 @@ class Cart extends Dbh{
         require_once 'Dbh.php';
         require_once __DIR__ . '/../includes/cart.inc.php';
 
+        $popisCartUser = get_info_cart($this->connect(), $this->user_id);
+        foreach ($popisCartUser as $pojedini) {
+            if($pojedini["product_id"]==$product_id){
+                return add_to_cart_quantity($this->connect(), $this->user_id, $product_id);
+            }
+        }
+
         return add_to_cart($this->connect(), $this->user_id, $product_id);
 
         }catch (PDOException $e) {
